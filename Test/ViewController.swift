@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         if Double(Result.text!) != nil {
             Counter = Double(Result.text!)!
         }
-        
     }
     @IBAction func Buttons(_ sender: UIButton)
     {
@@ -55,7 +54,14 @@ class ViewController: UIViewController {
         { //znak ravno
             if Operation == 15
             {
-            Result.text = String(FirstNumber/Counter)
+                if Counter==0
+                {
+                    Result.text = "Error"
+                }
+                else
+                {
+                    Result.text = String(FirstNumber/Counter)
+                }
             }
             else if Operation == 14
             {
@@ -78,21 +84,12 @@ class ViewController: UIViewController {
             Operation = 0
             
         }
-        else if sender.tag == 10
     }
-    
-    
-        
-      
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         Result.text = ""
         // Do any additional setup after loading the view.
     }
-    
 }
 
 
